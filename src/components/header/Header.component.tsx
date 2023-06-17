@@ -6,13 +6,13 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const state = useAppSelector((store) => store.user.name);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const state = useAppSelector((store) => store.user.name); // Obtenemos el nombre el usuario del store 
+  const dispatch = useDispatch(); // Hook que nos permite disparar un evento
+  const navigate = useNavigate(); // Hook que nos permite navegar de react-router-dom
 
   const handleClick = () => {
-    dispatch(resetUser());
-    navigate("/");
+    dispatch(resetUser()); // Disparamos la funcion resetUser
+    navigate("/"); // Navegamos al incio
   };
 
   return (
@@ -34,6 +34,7 @@ const Header = () => {
         />
         <Typography ml={2}>e-Commerce Gaspi</Typography>
       </Box>
+      {/* Si existe algo en el store de redux (user) mostramos un icono para eliminar la informacion del store */}
       {state !== "" ? (
         <IconButton title="Eliminar store" onClick={handleClick}>
           <ExitToApp />

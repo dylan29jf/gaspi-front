@@ -20,8 +20,8 @@ const EditProvider = () => {
   const { provider, loading } = useGetProvider(id || "");
 
   const formikProps = useFormik<ProviderInterface>({
-    enableReinitialize: true,
-    initialValues: provider,
+    enableReinitialize: true, // Con esto hacemso que los valores iniciales puedan ser motificados
+    initialValues: provider, // Asignamos los valores que vienen del id
     onSubmit: async (values) => {
       await handleUpdateProvider(values, id || "");
       navigate("/providers")

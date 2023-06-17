@@ -17,8 +17,6 @@ import { createUser } from "@/redux/Profile/profileSlice";
 const Home = () => {
   const { data, loading } = useGetProfile();
 
-  console.log(loading);
-
   return (
     <Box
       display={"flex"}
