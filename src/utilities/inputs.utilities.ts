@@ -1,0 +1,1 @@
+export const handleError = (onTouched: boolean, errors: string) : boolean => onTouched && Boolean(errors)
